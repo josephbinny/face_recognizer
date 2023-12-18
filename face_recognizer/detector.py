@@ -4,6 +4,7 @@ import face_recognition
 import pickle
 from collections import Counter
 from PIL import Image, ImageDraw
+import time
 
 
 DEFAULT_ENCODINGS_PATH = Path("output/encodings.pkl")
@@ -94,6 +95,9 @@ def recognize_faces(
             if name != "Unknown": names.add(name)
 
         del draw
+        if names:
+            path_to_save = rf"./output/detected{names}{int(time.time())}.jpg"
+            pillow_image.save(path_to_save)
         pillow_image.show()
     
     else:
