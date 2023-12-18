@@ -35,6 +35,10 @@ The project expects this file heirarchy:
 Provided that data_cleaning script is run, the model can be trained by running the command line prompt `python detector.py --train`. The encodings are saved in *./face_recognizer/output*  
 For validation, run `python detector.py --validate`  
 For testing a single image, run `python detector.py --test -f img_path`. Note that if faces are detected in the picture, it will be saved in *./face_recognizer/output*  
+Below is an illustration of running the --test command  
+
+![image](https://github.com/josephbinny/face_recognizer/blob/main/face_recognizer/output/detected%7B'Aaron_Peirsol'%7D1702892481.jpg)  
+
 You can choose the method that face-recognition library would use to perform the training and testing by specifying the argument `-m [hog, cnn]`  
 cnn is optimized for GPU-enabled environments and hog (histogram of oriented gradients) works best for CPU.
 
